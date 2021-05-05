@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.secondkill.system.order.mapper.OrderMapper">
+
+<!--    添加订单-->
+    <insert id="addOrder" parameterType="com.secondkill.api.order.entry.TbOrder"
+            useGeneratedKeys="true" keyProperty="id"
+    >
+        insert into
+            tb_order(goods_id, user_id,ms_goods_id, count, unit_price, goods_title, order_state, create_time)
+        value(
+            #{goodsId},#{userId},#{msGoodsId},#{count},#{unitPrice},#{goodsTitle},#{orderState},#{createTime}
+        )
+    </insert>
+
+
+<!--    订单超时未支付自动取消-->
+    <update id="updateOrderState" parameterType="integer">
+        update tb_order set order_state = 2 where id = #{id}
+    </update>
+
+<!--    支付，修改订单状态-->
+    <update id="payUpdateOrder" parameterType="map">
+        update tb_order set order_state = 0, pay_time = #{payTime} where id = #{orderId}
+    </update>
+
+
+
+    <!--    获取秒杀id和用户id-->
+    <select id="getMsGoodsIdAndUserId" resultType="com.secondkill.api.order.entry.TbOrder" parameterType="integer">
+        select ms_goods_id, user_id, order_state from tb_order where id = #{orderId}
+    </select>
+
+<!--    根据订单id获取订单信息-->
+    <select id="getOrderById" resultType="com.secondkill.api.order.entry.TbOrder">
+        select id, goods_title, unit_price, count, order_state from tb_order where id = #{orderId}
+    </select>
+
+<!--    分页列出所有描述订单-->
+    <select id="listOrder" resultType="com.secondkill.api.order.entry.TbOrder">
+        select
+            t1.*, t2.goods_img,t3.username
+        from
+            tb_order t1, tb_goods t2, tb_user t3
+        where
+            t1.goods_id = t2.goods_id
+        and
+            t1.user_id = t3.id
+        limit
+            #{page}, #{total}
+    </select>
+
+<!--    统计订单总数-->
+    <select id="countOrder" resultType="java.lang.Integer">
+        select count(id) from tb_order
+    </select>
+
+
+    <!--    删除订单-->
+    <delete id="delOrder">
+        delete from tb_order where id in
+        <foreach collection="orderIds" item="orderId" open="(" separator="," close=")">
+            #{orderId}
+        </foreach>
+    </delete>
+
+<!--    根据用户id获取该用户的订单-->
+    <select id="listOrderByUserId" resultType="com.secondkill.api.order.entry.TbOrder" parameterType="integer">
+        select
+            t1.*, t2.goods_img
+        from
+            tb_order t1, tb_goods t2
+        where
+            t1.goods_id = t2.goods_id
+        and
+            t1.user_id = #{userId}
+    </select>
+
+
+</mapper>

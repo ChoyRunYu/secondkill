@@ -1,0 +1,28 @@
+2021-05-04 21:52:09,593 INFO DEFAULT_GROUP@@secondkill-goods {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.205.1:8021:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-05-04 21:52:09,595 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@secondkill-goods, ips: 192.168.205.1:8021_true,
+
+2021-05-04 21:53:04,506 INFO DEFAULT_GROUP@@secondkill-goods {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.205.1:8021:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-05-04 21:53:04,506 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@secondkill-goods, ips: 
+
+2021-05-04 21:53:52,417 INFO DEFAULT_GROUP@@secondkill-auth {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.205.1:8002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-05-04 21:53:52,417 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@secondkill-auth, ips: 192.168.205.1:8002_true,
+
+2021-05-04 21:53:55,045 INFO DEFAULT_GROUP@@secondkill-order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.205.1:8010:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-05-04 21:53:55,045 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@secondkill-order, ips: 192.168.205.1:8010_true,
+
+2021-05-04 21:53:55,328 INFO DEFAULT_GROUP@@secondkill-user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.205.1:8001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-05-04 21:53:55,328 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@secondkill-user, ips: 192.168.205.1:8001_true,
+
+2021-05-04 21:54:06,332 INFO DEFAULT_GROUP@@secondkill-zuul {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.205.1:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-05-04 21:54:06,333 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@secondkill-zuul, ips: 192.168.205.1:8000_true,
+
+2021-05-04 21:54:10,631 INFO DEFAULT_GROUP@@secondkill-goods {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.205.1:8021:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-05-04 21:54:10,631 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@secondkill-goods, ips: 192.168.205.1:8021_true,
+

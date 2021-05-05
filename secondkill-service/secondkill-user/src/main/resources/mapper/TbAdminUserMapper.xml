@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.secondkill.system.user.mapper.TbAdminUserMapper">
+
+    <resultMap id="baseResultMap" type="com.secondkill.api.user.entry.TbAdminUser">
+        <id property="id" column="id" />
+        <result property="username" column="username" />
+        <result property="nickname" column="nickname" />
+        <result property="createTime" column="create_time" />
+    </resultMap>
+
+<!--    管理员登录-->
+    <select id="login" resultType="com.secondkill.api.user.entry.TbAdminUser" resultMap="baseResultMap">
+        select * from tb_admin_user where username = #{username} and password = #{password}
+    </select>
+
+<!--    根据管理员id获取管理员信息-->
+    <select id="getAdminInfoById" resultMap="baseResultMap" parameterType="integer">
+        select id,username,nickname,create_time from tb_admin_user where id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.secondkill.system.user.mapper.TbUserMapper">
+
+    <resultMap id="userBaseMap" type="com.secondkill.api.user.entry.TbUser">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="nickname" property="nickname" />
+        <result property="password" column="password" />
+        <result property="createTime" column="create_time" />
+        <result property="isEnable" column="is_enable" />
+    </resultMap>
+
+    <!--    添加新用户-->
+    <insert id="insertUser" parameterType="com.secondkill.api.user.entry.TbUser">
+        insert into tb_user(username, nickname, password, create_time, is_enable)
+        value(#{username}, #{nickname}, #{password},  #{createTime}, #{isEnable})
+    </insert>
+
+
+    <!--    更新用户信息-->
+    <update id="updateUser" parameterType="com.secondkill.api.user.entry.TbUser">
+        update tb_user
+        set
+            username = #{username}, nickname = #{nickname}, password = #{password}
+        where
+            id = #{id}
+    </update>
+
+    <!--    删除商城会员信息-->
+    <delete id="delUser" parameterType="integer">
+        delete from tb_user where id = #{id}
+    </delete>
+
+    <!--    根据id获取用户信息-->
+    <select id="getUserById" resultMap="userBaseMap" parameterType="integer">
+        select * from tb_user where id = #{id}
+    </select>
+
+    <!--    用户登录-->
+    <select id="login" resultMap="userBaseMap" parameterType="map">
+        select * from tb_user where username = #{username} and password = #{password}
+    </select>
+
+    <!--    用户注册-->
+    <insert id="userRegister" parameterType="com.secondkill.api.user.entry.TbUser">
+        insert into
+            tb_user(id, username, nickname, password, create_time, is_enable)
+        value(
+            #{id}, #{username}, #{nickname}, #{nickname}, #{password}, #{createTime}, #{isEnable}
+        )
+    </insert>
+
+    <!--    分页列出商城所有会员，一次返回10条记录-->
+    <select id="listUser" resultType="com.secondkill.api.user.entry.TbUser" parameterType="integer">
+        select
+            id,username,nickname,create_time,is_enable
+        from
+            tb_user
+        limit
+            #{page},#{total}
+    </select>
+
+<!--    统计用户数-->
+    <select id="countUser" resultType="java.lang.Integer">
+        select count(id) from tb_user
+    </select>
+
+
+    <!--    启用/停用商城会员-->
+    <update id="updateUserIsEnable">
+        update tb_user set is_enable = #{isEnable} where id = #{id}
+    </update>
+
+
+    <!--    检验用户名是否已注册-->
+    <select id="checkUsername" resultType="java.lang.Integer">
+        select count(id) from tb_user where username = #{username}
+    </select>
+
+
+<!--    用户注册-->
+    <insert id="register">
+        insert into tb_user(username, nickname, password, create_time, is_enable)
+        value(#{username}, #{nickname}, #{password}, #{createTime}, 1)
+    </insert>
+
+
+
+</mapper>

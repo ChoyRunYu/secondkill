@@ -1,0 +1,57 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: secondkill-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  main:
+    allow-bean-definition-overriding: true
+
+auth:
+#  设置过期时间为1小时, 调试设置为10小时，避免一直登陆
+  expireTime: 3600000000
+  privateKey:
+    MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMCYr3fZW6xxuFebKZfhZHI86cgq
+    XFgQ5UkeZLEA/5ylWeskHaebntiqQ22sCFPB+tRalxwwg5QewnwArwZwwFIuQuxuj8fQFvVpMnt7
+    89N4jr/ckXRP4sofRVNKJMMDteuybp8VlJ4LdMT/BJS68S7Eqgbul1GG256vEYWuTKAVAgMBAAEC
+    gYBI9o8jHFk6jyqDJekv/NeM377BcirhwiTa+oSy+encclgKWPhTEwWul3JMDixpbseTw24T4901
+    NCIB0FB+ZCC3WUDchtibNb2at9qqCX/eqHMrVENDl5TVF5EWfy3h8luo1GjKE1kkaf28HEdXrtpl
+    Bkd8JmTLZm12wrlJEb0IgQJBAOJ0tt9npfNC7LKPDh0u2RiV4cDUJrLDcGmewJUT0FFmMM+YSz6t
+    LtZTk7dsSTfIbxOo3LZnrF/90Ue6GjvGyQ0CQQDZuR2EYWYOOtmZF/Zr6BMoulgnjLgzFJQwaS5b
+    xQG07zperO80Cl7NLFkPI0ltcYuX9t7D6QRu0+7PJsujSuEpAkEA2y6scb8YWENGZe0gdA6MAcfQ
+    IZs1eYDApPoK3D+5OY/3XnbBHYDx/HAYYUhl9aACIr0mI0ZlCOPaU9pE2ealYQJAeKPkQSge/p+J
+    VxU6DAyqIRUwJ6oHnvY2LqT5dQwyp+ku9KrqWHGumg2Kw6KP2z7hVLEMOo3xUN/KIaqjh7XEEQJA
+    OJfxDwyr06ojNupu5TkC5mraia0QVACNqcF78pmSHJ3470OMSjg7lDZVJXaJ6xiQj2FHccF/ZZHR
+    Dv85ZvfwvA==
+  publicKey:
+    MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDAmK932VuscbhXmymX4WRyPOnIKlxYEOVJHmSx
+    AP+cpVnrJB2nm57YqkNtrAhTwfrUWpccMIOUHsJ8AK8GcMBSLkLsbo/H0Bb1aTJ7e/PTeI6/3JF0
+    T+LKH0VTSiTDA7Xrsm6fFZSeC3TE/wSUuvEuxKoG7pdRhtuerxGFrkygFQIDAQAB
+
+
+# Redis服务器地址
+redis:
+  host: 127.0.0.1
+  # Redis服务器连接端口
+  port: 6379
+  # Redis服务器连接密码（默认为空）
+  password: null
+  timeout: 30000
+  # 连接池最大连接数（使用负值表示没有限制）
+  maxTotal: 30
+  # 连接池中的最大空闲连接
+  maxIdle: 10
+  numTestsPerEvictionRun: 1024
+  timeBetweenEvictionRunsMillis: 30000
+  minEvictableIdleTimeMillis: 1800000
+  softMinEvictableIdleTimeMillis: 10000
+  # 连接池最大阻塞等待时间（使用负值表示没有限制）
+  maxWaitMillis: 1500
+  testOnBorrow: true
+  testWhileIdle: true
+  blockWhenExhausted: false
+  JmxEnabled: true

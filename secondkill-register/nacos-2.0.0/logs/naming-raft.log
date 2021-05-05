@@ -1,0 +1,52 @@
+2021-05-04 21:47:08,359 INFO raft peers changed: [Member{ip='192.168.205.1', port=8848, state=UP, extendInfo={raftPort=7848}}]
+
+2021-05-04 21:47:08,406 INFO initializing Raft sub-system
+
+2021-05-04 21:47:08,406 INFO finish loading all datums, size: 0 cost 0 ms.
+
+2021-05-04 21:47:08,412 INFO cache loaded, datum count: 0, current term: 0
+
+2021-05-04 21:47:08,412 INFO finish to load data from disk, cost: 6 ms.
+
+2021-05-04 21:47:08,415 INFO timer started: leader timeout ms: 15000, heart-beat timeout ms: 5000
+
+2021-05-04 21:47:09,446 INFO add listener: com.alibaba.nacos.naming.domains.meta.00-00---000-NACOS_SWITCH_DOMAIN-000---00-00
+
+2021-05-04 21:47:09,466 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2021-05-04 21:47:13,335 WARN start to close old raft protocol!!!
+
+2021-05-04 21:47:13,335 WARN stop old raft protocol task for notifier
+
+2021-05-04 21:47:13,335 WARN stop old raft protocol task for master task
+
+2021-05-04 21:47:13,335 WARN stop old raft protocol task for heartbeat task
+
+2021-05-04 21:47:13,335 WARN clean old cache datum for old raft
+
+2021-05-04 21:47:13,335 WARN start to close old raft protocol!!!
+
+2021-05-04 21:47:13,335 WARN stop old raft protocol task for notifier
+
+2021-05-04 21:47:13,335 WARN stop old raft protocol task for master task
+
+2021-05-04 21:47:13,335 WARN stop old raft protocol task for heartbeat task
+
+2021-05-04 21:47:13,335 WARN clean old cache datum for old raft
+
+2021-05-04 21:47:13,335 WARN start to move old raft protocol metadata
+
+2021-05-04 21:47:13,337 WARN start to move old raft protocol metadata
+
+2021-05-04 21:47:13,338 INFO raft peers changed: [Member{ip='192.168.205.1', port=8848, state=UP, extendInfo={lastRefreshTime=1620136033337, raftPort=7848, version=1.4.1}}]
+
+2021-05-04 21:52:09,409 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@secondkill-goods
+
+2021-05-04 21:53:52,415 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@secondkill-auth
+
+2021-05-04 21:53:55,041 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@secondkill-order
+
+2021-05-04 21:53:55,324 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@secondkill-user
+
+2021-05-04 21:54:06,332 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@secondkill-zuul
+

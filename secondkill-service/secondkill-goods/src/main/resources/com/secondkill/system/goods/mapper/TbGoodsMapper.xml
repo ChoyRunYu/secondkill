@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.secondkill.system.goods.mapper.TbGoodsMapper">
+
+    <resultMap id="baseGoodsMap" type="com.secondkill.api.goods.entry.TbGoods">
+        <result property="goodsId" column="goods_id" />
+        <result property="goodsTitle" column="goods_title"/>
+        <result property="goodsImg" column="goods_img"/>
+        <result property="goodsPrice" column="goods_price"/>
+        <association property="tbMsGoods" javaType="com.secondkill.api.goods.entry.TbMsGoods">
+            <id property="msGoodsId" column="ms_goods_id"/>
+            <result property="msGoodsStock" column="ms_goods_stock"/>
+            <result property="msPrice" column="ms_price"/>
+            <result property="startTime" column="start_time"/>
+            <result property="endTime" column="end_time"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="baseMsGoodsMap" type="com.secondkill.api.goods.entry.TbMsGoods">
+        <id property="msGoodsId" column="ms_goods_id"/>
+        <result property="msGoodsStock" column="ms_goods_stock"/>
+        <result property="msPrice" column="ms_price"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <association property="tbGoods" javaType="com.secondkill.api.goods.entry.TbGoods">
+            <id property="goodsId" column="goods_id" />
+            <result property="goodsTitle" column="goods_title"/>
+            <result property="goodsImg" column="goods_img"/>
+            <result property="goodsPrice" column="goods_price"/>
+        </association>
+    </resultMap>
+
+
+    <!--    获取秒杀订单列表-->
+    <select id="listGoods" resultMap="baseMsGoodsMap">
+        select
+            t1.goods_id,t2.ms_goods_id,goods_title,goods_img,goods_price,t2.ms_goods_stock,t2.ms_price,t2.start_time,t2.end_time
+        from
+            tb_ms_goods t2
+        left join
+            tb_goods t1
+        on
+            t1.goods_id = t2.goods_id
+    </select>
+
+<!--    根据id获取一条秒杀商品详情-->
+    <select id="getMsGoodsById" resultMap="baseMsGoodsMap" parameterType="integer">
+        select
+            t1.goods_id,t2.ms_goods_id,goods_title,goods_img,goods_price,t2.ms_goods_stock,t2.ms_price,t2.start_time,t2.end_time
+        from
+            tb_ms_goods t2
+                left join
+            tb_goods t1
+            on
+                t1.goods_id = t2.goods_id
+        where
+            t2.is_up = 1 and t2.ms_goods_id = #{id}
+    </select>
+
+<!--    搜索商品-->
+    <select id="listGoodsBySearch" resultMap="baseMsGoodsMap">
+        select
+            t1.goods_id,t2.ms_goods_id,goods_title,goods_img,goods_price,t2.ms_goods_stock,t2.ms_price,t2.start_time,t2.end_time
+        from
+            tb_ms_goods t2
+        left join
+            tb_goods t1
+        on
+            t1.goods_id = t2.goods_id
+        where
+            t1.goods_title like concat('%', #{keyword}, '%')
+    </select>
+
+
+    <!--    更新秒杀活动库存-->
+    <update id="updateMsGoodsStock" parameterType="integer">
+        update tb_ms_goods set ms_goods_stock = ms_goods_stock - 1 where ms_goods_id = #{msGoodsId} and ms_goods_stock > 0
+    </update>
+
+<!--    更新商品库存-->
+    <update id="updateGoodsStock" parameterType="integer">
+        update tb_goods set goods_stock = goods_stock - 1 where goods_id = #{goodsId} and goods_stock > 0
+    </update>
+</mapper>

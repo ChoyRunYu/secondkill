@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.secondkill.system.goods.mapper.GoodsAdminMapper">
+
+    <resultMap id="baseGoodsMap" type="com.secondkill.api.goods.entry.TbGoods">
+        <id property="goodsId" column="goods_id" />
+        <result property="goodsTitle" column="goods_title"/>
+        <result property="goodsImg" column="goods_img"/>
+        <result property="goodsPrice" column="goods_price"/>
+        <association property="tbMsGoods" javaType="com.secondkill.api.goods.entry.TbMsGoods">
+            <id property="msGoodsId" column="ms_goods_id"/>
+            <result property="msGoodsStock" column="ms_goods_stock"/>
+            <result property="msPrice" column="ms_price"/>
+            <result property="startTime" column="start_time"/>
+            <result property="endTime" column="end_time"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="baseMsGoodsMap" type="com.secondkill.api.goods.entry.TbMsGoods">
+        <id property="msGoodsId" column="ms_goods_id"/>
+        <result property="msGoodsStock" column="ms_goods_stock"/>
+        <result property="msPrice" column="ms_price"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="createTime" column="create_time" />
+        <association property="tbGoods" javaType="com.secondkill.api.goods.entry.TbGoods">
+            <id property="goodsId" column="goods_id" />
+            <result property="goodsTitle" column="goods_title"/>
+            <result property="goodsImg" column="goods_img"/>
+            <result property="goodsPrice" column="goods_price"/>
+            <result property="goodsStock" column="goods_stock"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="msGoodsMap" type="com.secondkill.api.goods.entry.TbMsGoods">
+        <id property="msGoodsId" column="ms_goods_id"/>
+        <result property="msGoodsStock" column="ms_goods_stock"/>
+        <result property="msPrice" column="ms_price"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="createTime" column="create_time" />
+        <association property="tbGoods" javaType="com.secondkill.api.goods.entry.TbGoods">
+            <result property="goodsStock" column="goods_stock" />
+        </association>
+    </resultMap>
+
+
+    <!--    根据id获取一条商品记录-->
+    <select id="getGoodsById" resultType="com.secondkill.api.goods.entry.TbGoods" parameterType="integer">
+        select * from tb_goods where goods_id = #{id}
+    </select>
+
+
+    <!--    添加秒杀活动-->
+    <insert id="addMsGoods"
+        useGeneratedKeys="true" keyProperty="msGoodsId"
+        parameterType="com.secondkill.api.goods.entry.TbMsGoods">
+        insert into
+            tb_ms_goods(goods_id, ms_price,ms_goods_stock,start_time,end_time,create_time,is_up)
+        value(
+            #{goodsId}, #{msPrice}, #{msGoodsStock},#{startTime},#{endTime},#{createTime},#{isUp}
+        )
+    </insert>
+
+<!--    添加商品信息-->
+    <insert id="addGoods"
+            useGeneratedKeys="true" keyProperty="goodsId"
+            parameterType="com.secondkill.api.goods.entry.TbGoods">
+        insert into
+            tb_goods(goods_name, goods_title, goods_img, goods_price,goods_stock, create_time)
+        value(
+            #{goodsName}, #{goodsTitle}, #{goodsImg}, #{goodsPrice}, #{goodsStock}, #{createTime}
+        )
+    </insert>
+
+    <!--    获取一条秒杀商品信息-->
+    <select id="getMsGoodsById" resultMap="baseMsGoodsMap" parameterType="integer">
+        select
+            t1.goods_id,t2.ms_goods_id,goods_title,goods_img,goods_price,t2.ms_goods_stock,t2.ms_price,t2.start_time,t2.end_time
+        from
+            tb_goods t1
+        left join
+            tb_ms_goods t2
+        on
+            t1.goods_id = t2.goods_id
+        where
+            t2.is_up = 1 and t2.ms_goods_id = #{id}
+    </select>
+
+<!--    根据分页获取商品列表-->
+    <select id="listGoods" resultType="com.secondkill.api.goods.entry.TbGoods">
+        select * from tb_goods limit #{page}, #{total}
+    </select>
+<!--    统计商品总数-->
+    <select id="countGoods" resultType="java.lang.Integer">
+        select count(goods_id) from tb_goods
+    </select>
+
+
+    <!--    根据id删除商品记录-->
+    <delete id="delGoods" parameterType="integer">
+        delete from tb_goods where goods_id in
+        <foreach collection="goodsIds" item="goodsId" open="(" separator="," close=")">
+            #{goodsId}
+        </foreach>
+    </delete>
+<!--    删除秒杀商品-->
+    <delete id="delMsGoods">
+        delete from tb_ms_goods where ms_goods_id in
+        <foreach collection="msGoodsIds" item="msGoodsId" open="(" separator="," close=")">
+            #{msGoodsId}
+        </foreach>
+    </delete>
+
+<!--    根据商品ids删除秒杀活动-->
+    <delete id="delMsGoodsByGoodsId">
+        delete from tb_ms_goods where goods_id in
+        <foreach collection="goodsIds" item="goodsId" open="(" separator="," close=")">
+            #{goodsId}
+        </foreach>
+    </delete>
+
+    <!--    根据分页获取秒杀列表-->
+    <select id="listMsGoods" resultMap="baseMsGoodsMap">
+        select
+            t1.goods_id,t2.ms_goods_id,goods_title,goods_img,goods_price,
+            t2.ms_goods_stock,t2.ms_price,t2.start_time,t2.end_time,t2.create_time,
+            t1.goods_stock
+        from
+            tb_ms_goods t2
+        left join
+            tb_goods t1
+        on
+            t1.goods_id = t2.goods_id
+        limit
+            #{page}, #{total}
+    </select>
+
+<!--    统计秒杀总数-->
+    <select id="countMsGoods" resultType="java.lang.Integer">
+        select count(ms_goods_id) from tb_ms_goods
+    </select>
+
+<!--    根据id获取秒杀活动-->
+    <select id="getMsActivityById" resultMap="msGoodsMap">
+        select
+            t1.ms_goods_id,t1.ms_price,t1.ms_goods_stock,t1.start_time,t1.end_time, t2.goods_stock
+        from
+            tb_ms_goods t1
+        left join
+            tb_goods t2
+        on
+            t1.goods_id = t2.goods_id
+        where
+            t1.ms_goods_id = #{id}
+    </select>
+
+<!--    修改秒杀活动信息-->
+    <update id="updateMsActivity" parameterType="com.secondkill.api.goods.entry.TbMsGoods">
+        update
+            tb_ms_goods
+        set
+            ms_price = #{msPrice}, ms_goods_stock = #{msGoodsStock},
+            start_time = #{startTime}, end_time = #{endTime}
+        where
+            ms_goods_id = #{msGoodsId}
+    </update>
+
+<!--    编辑一条商品信息-->
+    <update id="updateGoods" parameterType="com.secondkill.api.goods.entry.TbGoods">
+        update
+            tb_goods
+        set
+            goods_name = #{goodsName}, goods_title = #{goodsTitle}, goods_img = #{goodsImg},
+            goods_price = #{goodsPrice}, goods_stock = #{goodsStock}
+        where
+            goods_id = #{goodsId}
+    </update>
+
+
+</mapper>

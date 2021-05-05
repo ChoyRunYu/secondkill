@@ -1,0 +1,224 @@
+2021-04-09 16:14:58,707 INFO DEFAULT_GROUP@@secondkill-zuul is changed, add it to push queue.
+
+2021-04-09 16:14:59,390 INFO serviceName: DEFAULT_GROUP@@secondkill-zuul changed, schedule push for: 169.254.188.211:63632, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,63632,1217963704655468
+
+2021-04-09 16:14:59,391 INFO send udp packet: 169.254.188.211,63632,1217963704655468
+
+2021-04-09 16:14:59,445 INFO received ack: {"type": "push-ack", "lastRefTime":"1217963704655468", "data":""} from: 169.254.188.211:63632, cost: 54 ms, unacked: 0, total push: 1
+
+2021-04-09 16:15:44,926 INFO DEFAULT_GROUP@@secondkill-zuul is changed, add it to push queue.
+
+2021-04-09 16:15:44,926 INFO serviceName: DEFAULT_GROUP@@secondkill-zuul changed, schedule push for: 169.254.188.211:58373, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,58373,1218009245087690
+
+2021-04-09 16:15:44,927 INFO send udp packet: 169.254.188.211,58373,1218009245087690
+
+2021-04-09 16:15:44,951 INFO received ack: {"type": "push-ack", "lastRefTime":"1218009245087690", "data":""} from: 169.254.188.211:58373, cost: 24 ms, unacked: 0, total push: 2
+
+2021-04-09 16:16:22,227 INFO DEFAULT_GROUP@@secondkill-goods is changed, add it to push queue.
+
+2021-04-09 16:16:22,227 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:65325, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,65325,1218046545367198
+
+2021-04-09 16:16:22,227 INFO send udp packet: 169.254.188.211,65325,1218046545367198
+
+2021-04-09 16:16:22,228 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:58373, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,58373,1218046545367198
+
+2021-04-09 16:16:22,228 INFO send udp packet: 169.254.188.211,58373,1218046545367198
+
+2021-04-09 16:16:22,228 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:58737, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,58737,1218046545367198
+
+2021-04-09 16:16:22,228 INFO send udp packet: 169.254.188.211,58737,1218046545367198
+
+2021-04-09 16:16:22,234 INFO received ack: {"type": "push-ack", "lastRefTime":"1218046545367198", "data":""} from: 169.254.188.211:58373, cost: 6 ms, unacked: 2, total push: 5
+
+2021-04-09 16:16:22,236 INFO received ack: {"type": "push-ack", "lastRefTime":"1218046545367198", "data":""} from: 169.254.188.211:65325, cost: 9 ms, unacked: 1, total push: 5
+
+2021-04-09 16:16:22,285 INFO received ack: {"type": "push-ack", "lastRefTime":"1218046545367198", "data":""} from: 169.254.188.211:58737, cost: 57 ms, unacked: 0, total push: 5
+
+2021-04-09 16:16:57,428 INFO DEFAULT_GROUP@@secondkill-goods is changed, add it to push queue.
+
+2021-04-09 16:16:57,428 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:58373, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,58373,1218081745336100
+
+2021-04-09 16:16:57,428 INFO send udp packet: 169.254.188.211,58373,1218081745336100
+
+2021-04-09 16:16:57,429 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:62095, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,62095,1218081745336100
+
+2021-04-09 16:16:57,429 INFO send udp packet: 169.254.188.211,62095,1218081745336100
+
+2021-04-09 16:16:57,430 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:58737, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,58737,1218081745336100
+
+2021-04-09 16:16:57,430 INFO send udp packet: 169.254.188.211,58737,1218081745336100
+
+2021-04-09 16:16:57,434 INFO received ack: {"type": "push-ack", "lastRefTime":"1218081745336100", "data":""} from: 169.254.188.211:62095, cost: 5 ms, unacked: 2, total push: 8
+
+2021-04-09 16:16:57,436 INFO received ack: {"type": "push-ack", "lastRefTime":"1218081745336100", "data":""} from: 169.254.188.211:58373, cost: 8 ms, unacked: 1, total push: 8
+
+2021-04-09 16:16:57,437 INFO received ack: {"type": "push-ack", "lastRefTime":"1218081745336100", "data":""} from: 169.254.188.211:58737, cost: 7 ms, unacked: 0, total push: 8
+
+2021-04-09 17:23:53,979 INFO DEFAULT_GROUP@@secondkill-goods is changed, add it to push queue.
+
+2021-04-09 17:23:53,999 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:56457, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,56457,253053618915
+
+2021-04-09 17:23:53,999 INFO send udp packet: 169.254.188.211,56457,253053618915
+
+2021-04-09 17:23:54,052 INFO received ack: {"type": "push-ack", "lastRefTime":"253053618915", "data":""} from: 169.254.188.211:56457, cost: 53 ms, unacked: 0, total push: 1
+
+2021-04-09 17:24:00,955 INFO DEFAULT_GROUP@@secondkill-user is changed, add it to push queue.
+
+2021-04-09 17:24:00,955 INFO serviceName: DEFAULT_GROUP@@secondkill-user changed, schedule push for: 169.254.188.211:54361, agent: Nacos-Java-Client:v1.4.1, key: 169.254.188.211,54361,260021336632
+
+2021-04-09 17:24:00,955 INFO send udp packet: 169.254.188.211,54361,260021336632
+
+2021-04-09 17:24:00,961 INFO received ack: {"type": "push-ack", "lastRefTime":"260021336632", "data":""} from: 169.254.188.211:54361, cost: 6 ms, unacked: 0, total push: 2
+
+2021-04-09 17:24:21,128 INFO DEFAULT_GROUP@@secondkill-order is changed, add it to push queue.
+
+2021-04-09 17:24:21,142 INFO serviceName: DEFAULT_GROUP@@secondkill-order changed, schedule push for: 169.254.188.211:60225, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,60225,280195500057
+
+2021-04-09 17:24:21,151 INFO send udp packet: 169.254.188.211,60225,280195500057
+
+2021-04-09 17:24:21,158 INFO received ack: {"type": "push-ack", "lastRefTime":"280195500057", "data":""} from: 169.254.188.211:60225, cost: 7 ms, unacked: 0, total push: 3
+
+2021-04-09 17:24:22,198 INFO DEFAULT_GROUP@@secondkill-auth is changed, add it to push queue.
+
+2021-04-09 17:24:22,202 INFO serviceName: DEFAULT_GROUP@@secondkill-auth changed, schedule push for: 169.254.188.211:60228, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,60228,281265581346
+
+2021-04-09 17:24:22,204 INFO send udp packet: 169.254.188.211,60228,281265581346
+
+2021-04-09 17:24:22,209 INFO received ack: {"type": "push-ack", "lastRefTime":"281265581346", "data":""} from: 169.254.188.211:60228, cost: 5 ms, unacked: 0, total push: 4
+
+2021-04-09 17:24:23,310 INFO DEFAULT_GROUP@@secondkill-zuul is changed, add it to push queue.
+
+2021-04-09 17:24:23,311 INFO serviceName: DEFAULT_GROUP@@secondkill-zuul changed, schedule push for: 169.254.188.211:54914, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,54914,282377349232
+
+2021-04-09 17:24:23,311 INFO send udp packet: 169.254.188.211,54914,282377349232
+
+2021-04-09 17:24:23,332 INFO received ack: {"type": "push-ack", "lastRefTime":"282377349232", "data":""} from: 169.254.188.211:54914, cost: 21 ms, unacked: 0, total push: 5
+
+2021-04-09 18:40:59,070 INFO DEFAULT_GROUP@@secondkill-zuul is changed, add it to push queue.
+
+2021-04-09 18:40:59,616 INFO DEFAULT_GROUP@@secondkill-goods is changed, add it to push queue.
+
+2021-04-09 18:41:01,862 INFO DEFAULT_GROUP@@secondkill-user is changed, add it to push queue.
+
+2021-04-09 18:41:01,934 INFO DEFAULT_GROUP@@secondkill-order is changed, add it to push queue.
+
+2021-04-09 18:41:03,127 INFO DEFAULT_GROUP@@secondkill-auth is changed, add it to push queue.
+
+2021-04-09 18:41:14,230 INFO DEFAULT_GROUP@@secondkill-zuul is changed, add it to push queue.
+
+2021-04-09 18:41:14,629 INFO DEFAULT_GROUP@@secondkill-goods is changed, add it to push queue.
+
+2021-04-09 18:41:16,849 INFO DEFAULT_GROUP@@secondkill-user is changed, add it to push queue.
+
+2021-04-09 18:41:16,948 INFO DEFAULT_GROUP@@secondkill-order is changed, add it to push queue.
+
+2021-04-09 18:41:18,141 INFO DEFAULT_GROUP@@secondkill-auth is changed, add it to push queue.
+
+2021-04-09 18:42:35,529 INFO DEFAULT_GROUP@@secondkill-goods is changed, add it to push queue.
+
+2021-04-09 18:42:35,530 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:55045, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,55045,4974595721924
+
+2021-04-09 18:42:35,530 INFO send udp packet: 169.254.188.211,55045,4974595721924
+
+2021-04-09 18:42:35,535 INFO received ack: {"type": "push-ack", "lastRefTime":"4974595721924", "data":""} from: 169.254.188.211:55045, cost: 5 ms, unacked: 0, total push: 6
+
+2021-04-09 18:42:37,587 INFO DEFAULT_GROUP@@secondkill-auth is changed, add it to push queue.
+
+2021-04-09 18:42:37,588 INFO serviceName: DEFAULT_GROUP@@secondkill-auth changed, schedule push for: 169.254.188.211:50507, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,50507,4976654156023
+
+2021-04-09 18:42:37,588 INFO send udp packet: 169.254.188.211,50507,4976654156023
+
+2021-04-09 18:42:37,593 INFO received ack: {"type": "push-ack", "lastRefTime":"4976654156023", "data":""} from: 169.254.188.211:50507, cost: 5 ms, unacked: 0, total push: 7
+
+2021-04-09 18:42:43,391 INFO DEFAULT_GROUP@@secondkill-order is changed, add it to push queue.
+
+2021-04-09 18:42:43,391 INFO serviceName: DEFAULT_GROUP@@secondkill-order changed, schedule push for: 169.254.188.211:54902, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,54902,4982457514221
+
+2021-04-09 18:42:43,391 INFO send udp packet: 169.254.188.211,54902,4982457514221
+
+2021-04-09 18:42:43,396 INFO received ack: {"type": "push-ack", "lastRefTime":"4982457514221", "data":""} from: 169.254.188.211:54902, cost: 5 ms, unacked: 0, total push: 8
+
+2021-04-09 18:42:46,751 INFO DEFAULT_GROUP@@secondkill-zuul is changed, add it to push queue.
+
+2021-04-09 18:42:46,751 INFO serviceName: DEFAULT_GROUP@@secondkill-zuul changed, schedule push for: 169.254.188.211:61289, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,61289,4985817483747
+
+2021-04-09 18:42:46,751 INFO send udp packet: 169.254.188.211,61289,4985817483747
+
+2021-04-09 18:42:46,769 INFO received ack: {"type": "push-ack", "lastRefTime":"4985817483747", "data":""} from: 169.254.188.211:61289, cost: 18 ms, unacked: 0, total push: 9
+
+2021-04-09 18:42:50,079 INFO DEFAULT_GROUP@@secondkill-user is changed, add it to push queue.
+
+2021-04-09 18:42:50,079 INFO serviceName: DEFAULT_GROUP@@secondkill-user changed, schedule push for: 169.254.188.211:63274, agent: Nacos-Java-Client:v1.4.1, key: 169.254.188.211,63274,4989145870888
+
+2021-04-09 18:42:50,079 INFO send udp packet: 169.254.188.211,63274,4989145870888
+
+2021-04-09 18:42:50,084 INFO received ack: {"type": "push-ack", "lastRefTime":"4989145870888", "data":""} from: 169.254.188.211:63274, cost: 5 ms, unacked: 0, total push: 10
+
+2021-04-09 19:37:17,988 INFO DEFAULT_GROUP@@secondkill-order is changed, add it to push queue.
+
+2021-04-09 19:37:17,990 INFO serviceName: DEFAULT_GROUP@@secondkill-order changed, schedule push for: 169.254.188.211:61289, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,61289,8257055190609
+
+2021-04-09 19:37:17,990 INFO send udp packet: 169.254.188.211,61289,8257055190609
+
+2021-04-09 19:37:17,994 INFO received ack: {"type": "push-ack", "lastRefTime":"8257055190609", "data":""} from: 169.254.188.211:61289, cost: 4 ms, unacked: 0, total push: 11
+
+2021-04-09 19:37:32,997 INFO DEFAULT_GROUP@@secondkill-order is changed, add it to push queue.
+
+2021-04-09 19:37:32,997 INFO serviceName: DEFAULT_GROUP@@secondkill-order changed, schedule push for: 169.254.188.211:61289, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,61289,8272063179949
+
+2021-04-09 19:37:32,997 INFO send udp packet: 169.254.188.211,61289,8272063179949
+
+2021-04-09 19:37:33,002 INFO received ack: {"type": "push-ack", "lastRefTime":"8272063179949", "data":""} from: 169.254.188.211:61289, cost: 5 ms, unacked: 0, total push: 12
+
+2021-04-09 19:37:35,737 INFO DEFAULT_GROUP@@secondkill-order is changed, add it to push queue.
+
+2021-04-09 19:37:35,737 INFO serviceName: DEFAULT_GROUP@@secondkill-order changed, schedule push for: 169.254.188.211:61289, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,61289,8274803342197
+
+2021-04-09 19:37:35,737 INFO send udp packet: 169.254.188.211,61289,8274803342197
+
+2021-04-09 19:37:35,739 INFO received ack: {"type": "push-ack", "lastRefTime":"8274803342197", "data":""} from: 169.254.188.211:61289, cost: 2 ms, unacked: 0, total push: 13
+
+2021-04-09 19:44:28,853 INFO DEFAULT_GROUP@@secondkill-zuul is changed, add it to push queue.
+
+2021-04-09 19:44:28,853 INFO serviceName: DEFAULT_GROUP@@secondkill-zuul changed, schedule push for: 169.254.188.211:61289, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,61289,8687919192138
+
+2021-04-09 19:44:28,853 INFO send udp packet: 169.254.188.211,61289,8687919192138
+
+2021-04-09 19:44:28,854 INFO received ack: {"type": "push-ack", "lastRefTime":"8687919192138", "data":""} from: 169.254.188.211:61289, cost: 1 ms, unacked: 0, total push: 14
+
+2021-04-09 19:45:04,107 INFO DEFAULT_GROUP@@secondkill-zuul is changed, add it to push queue.
+
+2021-04-09 19:45:04,107 INFO serviceName: DEFAULT_GROUP@@secondkill-zuul changed, schedule push for: 169.254.188.211:53457, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,53457,8723173896758
+
+2021-04-09 19:45:04,107 INFO send udp packet: 169.254.188.211,53457,8723173896758
+
+2021-04-09 19:45:04,126 INFO received ack: {"type": "push-ack", "lastRefTime":"8723173896758", "data":""} from: 169.254.188.211:53457, cost: 19 ms, unacked: 0, total push: 15
+
+2021-04-09 19:45:49,127 INFO DEFAULT_GROUP@@secondkill-goods is changed, add it to push queue.
+
+2021-04-09 19:45:49,127 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:54902, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,54902,8768194153595
+
+2021-04-09 19:45:49,127 INFO send udp packet: 169.254.188.211,54902,8768194153595
+
+2021-04-09 19:45:49,128 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:53457, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,53457,8768194153595
+
+2021-04-09 19:45:49,128 INFO send udp packet: 169.254.188.211,53457,8768194153595
+
+2021-04-09 19:45:49,128 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:55045, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,55045,8768194153595
+
+2021-04-09 19:45:49,128 INFO send udp packet: 169.254.188.211,55045,8768194153595
+
+2021-04-09 19:45:49,131 INFO received ack: {"type": "push-ack", "lastRefTime":"8768194153595", "data":""} from: 169.254.188.211:53457, cost: 3 ms, unacked: 2, total push: 18
+
+2021-04-09 19:45:49,134 INFO received ack: {"type": "push-ack", "lastRefTime":"8768194153595", "data":""} from: 169.254.188.211:54902, cost: 7 ms, unacked: 1, total push: 18
+
+2021-04-09 19:45:49,137 INFO received ack: {"type": "push-ack", "lastRefTime":"8768194153595", "data":""} from: 169.254.188.211:55045, cost: 9 ms, unacked: 0, total push: 18
+
+2021-04-09 19:46:22,868 INFO DEFAULT_GROUP@@secondkill-goods is changed, add it to push queue.
+
+2021-04-09 19:46:22,868 INFO serviceName: DEFAULT_GROUP@@secondkill-goods changed, schedule push for: 169.254.188.211:52969, agent: Nacos-Java-Client:v1.3.3, key: 169.254.188.211,52969,8801934443023
+
+2021-04-09 19:46:22,868 INFO send udp packet: 169.254.188.211,52969,8801934443023
+
+2021-04-09 19:46:22,872 INFO received ack: {"type": "push-ack", "lastRefTime":"8801934443023", "data":""} from: 169.254.188.211:52969, cost: 4 ms, unacked: 0, total push: 19
+
