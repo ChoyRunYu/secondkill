@@ -1,7 +1,6 @@
 package com.secondkill.api.user.vo;
 
 import com.secondkill.api.user.entry.TbUser;
-import com.sun.istack.internal.NotNull;
 import org.apache.logging.log4j.message.AsynchronouslyFormattable;
 
 import java.util.Date;

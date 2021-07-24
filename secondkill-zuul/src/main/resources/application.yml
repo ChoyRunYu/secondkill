@@ -12,6 +12,11 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
 
+ribbon:
+  ReadTimeout: 5000
+# 请求连接超时时间
+  ConnectTimeout: 1000
+
 
 zuul:
   routes:
