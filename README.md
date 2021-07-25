@@ -23,7 +23,7 @@ secondkill是基于微服务技术开发的一套前后端分离秒杀系统，�
 
 ## 架构图
 
-<img src="F:\毕设\图\系统架构图.png" alt="系统架构图" style="zoom: 67%;" />
+<img src="https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png" alt="系统架构图" style="zoom: 67%;" />
 
 ## 技术选型
 
