@@ -3,21 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>SecondKill</artifactId>
-        <groupId>com.secondkill</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>secondkill</artifactId>
+        <groupId>com.choy</groupId>
+        <version>1.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>secondkill-service</artifactId>
+
     <packaging>pom</packaging>
+
     <modules>
         <module>secondkill-user</module>
+        <module>secondkill-goods</module>
+        <module>secondkill-order</module>
     </modules>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
 
 </project>

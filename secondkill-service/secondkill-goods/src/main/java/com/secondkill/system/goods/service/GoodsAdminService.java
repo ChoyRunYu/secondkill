@@ -1,6 +1,5 @@
 package com.secondkill.system.goods.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.secondkill.api.goods.dto.EditGoodsDTO;
 import com.secondkill.api.goods.dto.GoodsDTO;
 import com.secondkill.api.goods.dto.MsGoodsBaseDTO;

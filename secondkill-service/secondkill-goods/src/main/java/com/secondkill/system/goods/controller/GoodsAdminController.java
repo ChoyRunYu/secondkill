@@ -1,6 +1,5 @@
 package com.secondkill.system.goods.controller;
 
-import com.baomidou.mybatisplus.extension.api.R;
 import com.secondkill.api.goods.dto.EditGoodsDTO;
 import com.secondkill.api.goods.dto.GoodsDTO;
 import com.secondkill.api.goods.dto.MsGoodsBaseDTO;
