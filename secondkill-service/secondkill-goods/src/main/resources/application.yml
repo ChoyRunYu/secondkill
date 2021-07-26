@@ -90,14 +90,6 @@ redis:
   blockWhenExhausted: false
   JmxEnabled: true
 
-oss:
-  bucketName: cairunyu
-  accessKeyId: LTAI5tMG46ydk6fHLfK95J5s
-  accessKeySecret: B0X2ABGNrpj74Afk9wEdNze2Jq7Hs4
-  #OSS对应的区域
-  endpoint: http://oss-cn-shenzhen.aliyuncs.com
-  fileDir: ms-img/
-
 logger:
   level:
     com.secondkill: debug
