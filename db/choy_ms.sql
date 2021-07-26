@@ -13,6 +13,9 @@
 
  Date: 26/07/2021 12:02:13
 */
+DROP DATABASE IF EXISTS `choy_ms`;
+CREATE DATABASE  `choy_ms` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE choy_ms;
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;

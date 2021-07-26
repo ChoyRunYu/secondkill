@@ -1,7 +1,7 @@
 version: '3'
 services:
   secondkill-nacos:
-    image: nacos/nacos-server
+    image: nacos/nacos-server:1.4.2
     restart: always
     ports:
       - 8848:8848
@@ -9,10 +9,6 @@ services:
     hostname: secondkill-register
     environment:
       MODE: standalone
-    volumes:
-      - ./docker/nacos/standalone-logs/:/home/nacos/logs
-      - ./docker/nacos/plugins/:/home/nacos/plugins
-      - ./docker/nacos/conf/application.properties:/home/nacos/conf/application.properties
 
 
   secondkill-mysql:
