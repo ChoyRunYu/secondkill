@@ -1,14 +1,19 @@
 version: '3'
 services:
   secondkill-nacos:
-    build:
-      context: ./secondkill-register
+    image: nacos/nacos-server
     restart: always
     ports:
       - 8848:8848
     container_name: secondkill-register
     hostname: secondkill-register
-    image: secondkill-register
+    environment:
+      MODE: standalone
+    volumes:
+      - ./docker/nacos/standalone-logs/:/home/nacos/logs
+      - ./docker/nacos/plugins/:/home/nacos/plugins
+      - ./docker/nacos/conf/application.properties:/home/nacos/conf/application.properties
+
 
   secondkill-mysql:
     build:
