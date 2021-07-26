@@ -1,0 +1,85 @@
+version: '1'
+services:
+  secondkill-nacos:
+    build:
+      context: ./secondkill-register
+    restart: always
+    ports:
+      - 8848:8848
+    container_name: secondkill-register
+    hostname: secondkill-register
+    image: secondkill-register
+
+  secondkill-mysql:
+    build:
+      context: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: 86598659yu
+      restart: always
+      container_name: secondkill-mysql
+      image: secondkill-mysql
+      ports:
+        - 3306:3306
+
+  secondkill-redis:
+    image: redis:3.2
+    ports:
+      - 6379:6379
+    restart: always
+    container_name: secondkill-redis
+    hostname: secondkill-redis
+
+  secondkill-rabbitmq:
+    image: rabbitmq:3.8.4
+    ports:
+      - 5672:5672
+      - 15672:15672
+    restart: always
+    container_name: secondkill-rabbitmq
+    hostname: secondkill-rabbitmq
+
+  secondkill-zuul:
+    build:
+      context: ./secondkill-zuul
+    ports:
+      - 8000:8000
+    restart: always
+    container_name: secondkill-zuul
+    hostname: secondkill-zuul
+
+
+  secondkill-auth:
+    build:
+      context: ./secondkill-auth
+    ports:
+      - 8002:8002
+    restart: always
+    container_name: secondkill-auth
+    hostname: secondkill-auth
+
+  secondkill-goods:
+    build:
+      context: ./secondkill-service/secondkill-goods
+    ports:
+      - 8021:8021
+    restart: always
+    container_name: secondkill-goods
+    hostname: secondkill-goods
+
+  secondkill-order:
+    build:
+      context: ./secondkill-service/secondkill-order
+    ports:
+      - 8010:8010
+    restart: always
+    container_name: secondkill-order
+    hostname: secondkill-order
+
+  secondkill-user:
+    build:
+      context: ./secondkill-service/secondkill-user
+    ports:
+      - 8001:8001
+    restart: always
+    container_name: secondkill-user
+    hostname: secondkill-user

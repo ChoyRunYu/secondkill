@@ -223,9 +223,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.version}</version>
-                <configuration>
-                    <mainClass>${project.groupId}</mainClass>
-                </configuration>
                 <executions>
                     <execution>
                         <goals>
