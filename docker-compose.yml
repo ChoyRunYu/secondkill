@@ -15,11 +15,11 @@ services:
       context: ./db
     environment:
       MYSQL_ROOT_PASSWORD: 86598659yu
-      restart: always
-      container_name: secondkill-mysql
-      image: secondkill-mysql
-      ports:
-        - 3306:3306
+    restart: always
+    container_name: secondkill-mysql
+    image: secondkill-mysql
+    ports:
+      - 3306:3306
 
   secondkill-redis:
     image: redis:3.2
