@@ -60,7 +60,23 @@ secondkill是基于微服务技术开发的一套前后端分离秒杀系统，�
 | │     └── secondkill-user-api  | 用户服务api模块   |
 | └── secondkill-zuul            | 网关服务模块      |
 
+## 运行
+### Docker支持
+```
+# 下载代码
+git clone https://github.com/ChoyRunYu/secondkill.git
+
+# 进入目录
+cd secondkill
+
+# mvn打包
+mvn clean package
+
+# docker-compose运行
+docker-compose -f docker-compose.yml up -d
+```
+
 ## 截图
 
-暂无
+![image-20210727102747513](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210727102747513.png)
 
