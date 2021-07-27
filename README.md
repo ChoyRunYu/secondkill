@@ -63,7 +63,7 @@ secondkill是基于微服务技术开发的一套前后端分离秒杀系统，�
 ## 运行
 ### Docker支持
 ```
-# 下载代码
+# 下载代码 
 git clone https://github.com/ChoyRunYu/secondkill.git
 
 # 进入目录
