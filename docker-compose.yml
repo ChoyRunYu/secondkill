@@ -1,6 +1,6 @@
 version: '3'
 services:
-  secondkill-regieter:
+  secondkill-register:
     image: nacos/nacos-server:1.4.2
     restart: always
     ports:
