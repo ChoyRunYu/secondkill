@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      url: jdbc:mysql:///choy_ms?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://${secondkill-mysql:127.0.0.1}:3306/choy_ms?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
       username: root
       password: 86598659yu
       initial-size: 10
@@ -42,14 +42,14 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: ${secondkill-register:127.0.0.1}:8848
 #        namespace: dev
 #        group: user
 #        ip: 127.0.0.1
 
 
   redis:
-    host: 127.0.0.1
+    host: ${secondkill-redis:127.0.0.1}
     port: 6379
     password:
     jedis:
@@ -76,7 +76,7 @@ auth:
 
 # Redis服务器地址
 redis:
-  host: 127.0.0.1
+  host: ${secondkill-redis:127.0.0.1}
   # Redis服务器连接端口
   port: 6379
   # Redis服务器连接密码（默认为空）
