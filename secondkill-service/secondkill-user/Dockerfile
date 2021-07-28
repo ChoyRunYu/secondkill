@@ -1,4 +1,4 @@
-FROM java:8
+FROM openjdk:8-jre
 WORKDIR /build
 ADD ./target/secondkill-user-1.1.0.jar ./secondkill-user.jar
 EXPOSE 8001

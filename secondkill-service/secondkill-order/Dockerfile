@@ -1,4 +1,4 @@
-FROM java:8
+FROM openjdk:8-jre
 WORKDIR /build
 ADD ./target/secondkill-order-1.1.0.jar ./secondkill-order.jar
 EXPOSE 8010
