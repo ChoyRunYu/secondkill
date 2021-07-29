@@ -61,6 +61,20 @@ secondkill是基于微服务技术开发的一套前后端分离秒杀系统，�
 | └── secondkill-zuul            | 网关服务模块      |
 
 ## 运行
+### 本地运行
+需要往hosts中添加
+
+```
+127.0.0.1   secondkill-register
+127.0.0.1   secondkill-mysql
+127.0.0.1   secondkill-redis
+127.0.0.1   secondkill-rabbitmq
+127.0.0.1   secondkill-auth
+127.0.0.1   secondkill-zuul
+127.0.0.1   secondkill-goods
+127.0.0.1   secondkill-order
+127.0.0.1   secondkill-user
+```
 ### Docker支持
 ```
 # 下载代码 
