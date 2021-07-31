@@ -12,14 +12,17 @@
 
 secondkill是基于微服务技术开发的一套前后端分离秒杀系统，主要目的是为了学习秒杀业务和微服务项目。
 
-- 前后端分离的开发模式的秒杀系统，后端使用了Spring Cloud微服务开发组件开发而成，前端使用了Vue全家桶进行开发。
+- 前后端分离开发模式的秒杀系统，后端使用了Spring Cloud微服务组件开发而成，前端使用了Vue全家桶进行开发。
 - 注册中心选用了alibaba的nacos，后期准备引入nacos的配置中心。
-- 提供对docker，docker-compose的支持（正在肝）
+- 提供对docker，docker-compose的支持
+- 图片上传支持阿里云oss存储
 
-## 项目地址
+## 项目链接
 
-- [秒杀后台管理前端](https://github.com/ChoyRunYu/secondkill-admin)
-- [用户秒杀前端](https://github.com/ChoyRunYu/secondkill-vue)
+| 名称         | github                                        | gitee                                        |
+| ------------ | --------------------------------------------- | -------------------------------------------- |
+| 后台管理前端 | https://github.com/ChoyRunYu/secondkill-admin | https://gitee.com/Choyrunyu/secondkill-admin |
+| 秒杀前端     | https://github.com/ChoyRunYu/secondkill-vue   | https://gitee.com/Choyrunyu/secondkill-vue   |
 
 ## 架构图
 
@@ -44,25 +47,28 @@ secondkill是基于微服务技术开发的一套前后端分离秒杀系统，�
 
 ## 模块介绍
 
-| 模块名                         | 说明              |
-| ------------------------------ | ----------------- |
-| ├── secondkill-auth            | 鉴权服务模块      |
-| ├── secondkill-common          | 公共模块          |
-| ├── secondkill-rabbitmq        | rabbitmq配置模块  |
-| ├── secondkill-register        | 注册中心模块      |
-| ├── secondkill-service         | 微服务集合模块    |
-| │     ├── secondkill-goods     | 商品服务子模块    |
-| │     ├── secondkill-order     | 订单服务子模块    |
-| │     └── secondkill-user      | 用户服务子模块    |
-| ├── secondkill-service-api     | 微服务api集合模块 |
-| │     ├── secondkill-goods-api | 商品服务api模块   |
-| │     ├── secondkill-order-api | 订单服务api模块   |
-| │     └── secondkill-user-api  | 用户服务api模块   |
-| └── secondkill-zuul            | 网关服务模块      |
+| 模块名                         | 说明（端口）           |
+| ------------------------------ | ---------------------- |
+| ├── secondkill-auth            | 鉴权服务模块（8002）   |
+| ├── secondkill-common          | 公共模块               |
+| ├── secondkill-rabbitmq        | rabbitmq配置模块       |
+| ├── secondkill-register        | 注册中心模块（8848）   |
+| ├── secondkill-service         | 微服务集合模块         |
+| │     ├── secondkill-goods     | 商品服务子模块（8021） |
+| │     ├── secondkill-order     | 订单服务子模块（8010） |
+| │     └── secondkill-user      | 用户服务子模块（8001） |
+| ├── secondkill-service-api     | 微服务api集合模块      |
+| │     ├── secondkill-goods-api | 商品服务api模块        |
+| │     ├── secondkill-order-api | 订单服务api模块        |
+| │     └── secondkill-user-api  | 用户服务api模块        |
+| └── secondkill-zuul            | 网关服务模块（8000）   |
 
-## 运行
-### 本地运行
-需要往hosts中添加
+## 快速开始
+### 本地开发
+
+需要往hosts中添加以下域名，本地运行需要有rabbitmq和redis环境，需要跑5个微服务，1个注册中心和其他中间件，建议不低于16g内存。
+
+**注意**：需要配置公共模块中oss.properties中的oss信息，才能进行商品图片的上传
 
 ```
 127.0.0.1   secondkill-register
@@ -77,6 +83,28 @@ secondkill是基于微服务技术开发的一套前后端分离秒杀系统，�
 ```
 ### Docker支持
 ```
+## 秒杀前端
+# 克隆代码
+git clone https://github.com/ChoyRunYu/secondkill-admin
+ 
+# 进入目录、安装依赖、构建
+cd secondkill-admin && npm install && npm run build:docker
+
+# docker启动
+cd docker && docker-compost up -d
+
+## 后台管理
+# 克隆项目
+git clone https://github.com/ChoyRunYu/secondkill-vue.git
+
+# 安装依赖、打包构建
+cd secondkill-vue && npm install && npm run build:docker
+
+# 运行docker-compose
+cd docker && docker-compose up -d
+
+
+## 微服务
 # 下载代码 
 git clone https://github.com/ChoyRunYu/secondkill.git
 
@@ -92,7 +120,28 @@ docker-compose -f docker-compose.yml up -d
 
 ## 截图
 
-![image-20210729223115991](C:\Users\Choy\AppData\Roaming\Typora\typora-user-images\image-20210729223115991.png)
+#### 注册中心
 
-![image-20210729223144017](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210729223144017.png)
+![image-20210729223115991](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210729223115991.png)
 
+#### docker的portainer管理面板
+
+![image-20210731145510301](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210731145510301.png)
+
+#### 秒杀界面
+
+![image-20210725141627940](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210725141627940.png)
+
+![image-20210725141645800](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210725141645800.png)
+
+![image-20210725141704024](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210725141704024.png)
+
+![image-20210725141718800](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210725141718800.png)
+
+#### 后台管理
+
+
+
+![image-20210725141527793](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210725141527793.png)
+
+![image-20210725141558355](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210725141558355.png)
