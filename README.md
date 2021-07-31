@@ -84,20 +84,20 @@ secondkill是基于微服务技术开发的一套前后端分离秒杀系统，�
 ### Docker支持
 ```
 ## 秒杀前端
-# 克隆代码
-git clone https://github.com/ChoyRunYu/secondkill-admin
+# 克隆项目
+git clone https://github.com/ChoyRunYu/secondkill-admin.git
  
 # 进入目录、安装依赖、构建
 cd secondkill-admin && npm install && npm run build:docker
 
-# docker启动
-cd docker && docker-compost up -d
+# 运行docker-compose
+cd docker && docker-compose up -d
 
 ## 后台管理
 # 克隆项目
 git clone https://github.com/ChoyRunYu/secondkill-vue.git
 
-# 安装依赖、打包构建
+# 进入目录、安装依赖、构建
 cd secondkill-vue && npm install && npm run build:docker
 
 # 运行docker-compose
@@ -105,7 +105,7 @@ cd docker && docker-compose up -d
 
 
 ## 微服务
-# 下载代码 
+# 克隆项目 
 git clone https://github.com/ChoyRunYu/secondkill.git
 
 # 进入目录
