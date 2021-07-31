@@ -99,24 +99,24 @@
 
 
     <!--    根据id删除商品记录-->
-    <delete id="delGoods" parameterType="integer">
+    <delete id="delGoods">
         delete from tb_goods where goods_id in
-        <foreach collection="goodsIds" item="goodsId" open="(" separator="," close=")">
+        <foreach collection="array" item="goodsId" open="(" separator="," close=")">
             #{goodsId}
         </foreach>
     </delete>
 <!--    删除秒杀商品-->
     <delete id="delMsGoods">
         delete from tb_ms_goods where ms_goods_id in
-        <foreach collection="msGoodsIds" item="msGoodsId" open="(" separator="," close=")">
+        <foreach collection="array" item="msGoodsId" open="(" separator="," close=")">
             #{msGoodsId}
         </foreach>
     </delete>
 
 <!--    根据商品ids删除秒杀活动-->
-    <delete id="delMsGoodsByGoodsId">
+    <delete id="delMsGoodsByGoodsId" parameterType="integer">
         delete from tb_ms_goods where goods_id in
-        <foreach collection="goodsIds" item="goodsId" open="(" separator="," close=")">
+        <foreach collection="array" item="goodsId" open="(" separator="," close=")">
             #{goodsId}
         </foreach>
     </delete>

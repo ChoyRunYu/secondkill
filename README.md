@@ -92,5 +92,7 @@ docker-compose -f docker-compose.yml up -d
 
 ## 截图
 
-![image-20210727102747513](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210727102747513.png)
+![image-20210729223115991](C:\Users\Choy\AppData\Roaming\Typora\typora-user-images\image-20210729223115991.png)
+
+![image-20210729223144017](https://choyblog.oss-cn-shenzhen.aliyuncs.com/img/image-20210729223144017.png)
 

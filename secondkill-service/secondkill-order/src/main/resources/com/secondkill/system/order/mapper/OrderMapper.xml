@@ -60,7 +60,7 @@
     <!--    删除订单-->
     <delete id="delOrder">
         delete from tb_order where id in
-        <foreach collection="orderIds" item="orderId" open="(" separator="," close=")">
+        <foreach collection="array" item="orderId" open="(" separator="," close=")">
             #{orderId}
         </foreach>
     </delete>
