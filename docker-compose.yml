@@ -1,19 +1,32 @@
-version: '2'
+# 指定版本号
+version: '3'
 services:
+  # 注册中心服务
   secondkill-register:
+    # nacos-1.4.2镜像
     image: nacos/nacos-server:1.4.2
+    # 重启方式：总是
     restart: always
+    # 端口映射
     ports:
       - 8848:8848
+    # 容器名
     container_name: secondkill-register
+    # 主机名
     hostname: secondkill-register
+    # 环境变量，设置启动方式为单机启动
     environment:
       MODE: standalone
+    # 添加到网路app
+    networks:
+      - app
 
-
+  # 数据库服务
   secondkill-mysql:
+    # 数据库对应Dockerfile目录
     build:
       context: ./db
+    # 设置数据库密码
     environment:
       MYSQL_ROOT_PASSWORD: 86598659yu
     restart: always
@@ -21,16 +34,24 @@ services:
     image: secondkill-mysql
     ports:
       - 3306:3306
+    networks:
+      - app
 
+  # redis服务
   secondkill-redis:
+    # redis-3.2镜像
     image: redis:3.2
     ports:
       - 6379:6379
     restart: always
     container_name: secondkill-redis
     hostname: secondkill-redis
+    networks:
+      - app
 
+  # rabbitmq队列服务
   secondkill-rabbitmq:
+    # rabbitmq-3.8.4镜像
     image: rabbitmq:3.8.4
     ports:
       - 5672:5672
@@ -38,8 +59,14 @@ services:
     restart: always
     container_name: secondkill-rabbitmq
     hostname: secondkill-rabbitmq
+    networks:
+      - app
 
+# 以下是微服务
+
+  # 网关服务
   secondkill-zuul:
+    # 网关服务对应Dockerfile路径
     build:
       context: ./secondkill-zuul
     ports:
@@ -47,9 +74,12 @@ services:
     restart: always
     container_name: secondkill-zuul
     hostname: secondkill-zuul
+    networks:
+      - app
 
-
+  # 鉴权服务
   secondkill-auth:
+    # 鉴权服务对应Dockerfile路径
     build:
       context: ./secondkill-auth
     ports:
@@ -57,8 +87,12 @@ services:
     restart: always
     container_name: secondkill-auth
     hostname: secondkill-auth
+    networks:
+      - app
 
+  # 商品服务
   secondkill-goods:
+    # 商品服务对应Dockerfile路径
     build:
       context: ./secondkill-service/secondkill-goods
     ports:
@@ -66,8 +100,12 @@ services:
     restart: always
     container_name: secondkill-goods
     hostname: secondkill-goods
+    networks:
+      - app
 
+  # 订单服务
   secondkill-order:
+    # 订单服务对应Dockerfile路径
     build:
       context: ./secondkill-service/secondkill-order
     ports:
@@ -75,8 +113,12 @@ services:
     restart: always
     container_name: secondkill-order
     hostname: secondkill-order
+    networks:
+      - app
 
+  # 用户服务
   secondkill-user:
+    # 用户服务对应Dockerfile路径
     build:
       context: ./secondkill-service/secondkill-user
     ports:
@@ -84,3 +126,9 @@ services:
     restart: always
     container_name: secondkill-user
     hostname: secondkill-user
+    networks:
+      - app
+
+# 设置网络为app
+networks:
+  app:
